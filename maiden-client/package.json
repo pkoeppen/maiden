@@ -1,0 +1,26 @@
+{
+  "name": "maiden-client",
+  "version": "1.0.0",
+  "description": "Front end for maiden.agency.",
+  "scripts": {
+    "hugo": "gulp hugo",
+    "start": "gulp server",
+    "build": "gulp build-clean"
+  },
+  "author": "Peter Koeppen",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "browser-sync": "^2.24.4",
+    "child_process": "^1.0.2",
+    "gulp": "^3.9.1",
+    "gulp-clean": "^0.4.0",
+    "gulp-clean-css": "^3.9.4",
+    "gulp-htmlmin": "^4.0.0",
+    "gulp-postcss": "^7.0.1",
+    "gulp-rename": "^1.2.3",
+    "gulp-sass": "^4.0.1",
+    "gulp-uglify": "^3.0.0",
+    "gulp-zip": "^4.1.0",
+    "hugo-bin": "^0.28.0"
+  }
+}

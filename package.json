@@ -1,0 +1,12 @@
+{
+  "name": "maiden",
+  "version": "1.0.0",
+  "description": "Source for my portfolio website.",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/pkoeppen/maiden.git"
+  },
+  "private": true,
+  "author": "Peter Koeppen",
+  "license": "UNLICENSED"
+}

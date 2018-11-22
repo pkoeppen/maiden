@@ -1,0 +1,72 @@
+
+// Link
+// ––––––––––––––––––––––––––––––––––––––––––––––––––
+
+a
+	color: $color-primary
+	text-decoration: none
+	outline: none
+	border-bottom: 1px solid $color-tertiary
+	transition: all 250ms ease-out
+
+	&:hover,
+	&:focus
+		border-color: $color-blood-red
+
+h2 a
+	span
+		position: relative
+		opacity: 0
+		animation: hero-typer 1000ms forwards cubic-bezier(0.55, 0.055, 0.675, 0.19)
+
+		&:after
+			content: ""
+			opacity: 0
+			background: $color-blood-red
+			position: absolute
+			bottom: 8px
+			left: 0
+			right: 0
+			height: 3px
+			z-index: -1
+			animation: hero-typer-underline 500ms 1200ms forwards ease-out
+
+	&:hover span:after,
+	&:focus span:after
+		background: $color-blood-red
+
+a.underline
+	border: none
+
+	&:hover span:after,
+	&:focus span:after
+		background: $color-primary
+		right: 0
+
+	span
+		position: relative
+		z-index: 0
+
+		&:after
+			content: ""
+			background: $color-tertiary
+			position: absolute
+			bottom: -6px
+			left: 0
+			right: 100%
+			height: 2px
+			z-index: -1
+			transition: all 250ms ease-out
+
+@keyframes hero-typer
+	from
+		opacity: 0
+	to
+		top: 0
+		opacity: 1
+
+@keyframes hero-typer-underline
+	from
+		opacity: 0
+	to
+		opacity: 1

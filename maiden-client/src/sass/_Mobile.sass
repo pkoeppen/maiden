@@ -1,0 +1,274 @@
+
+// Mobile
+// ––––––––––––––––––––––––––––––––––––––––––––––––––
+
+// Lazy mobile breakpoints (desktop-first 4 lyfe)
+
+@media (min-width: 450px)
+
+	.column
+
+		&.column-50-xs
+				flex: 0 0 50%
+				max-width: 50%
+
+	header.navigation
+
+		nav
+
+			#menu-overlay
+
+				.menu-items
+
+					ul.menu-items-large
+						font-size: 2.4em
+
+						li
+							line-height: 7rem
+
+	section#links
+
+		.office-container
+
+			.column + .column
+				margin: 0
+
+		.office-container .row,
+		.blog-container .row
+			flex-direction: row
+
+	section#footer
+
+		nav
+
+			.left,
+			.right
+
+				ul
+
+					li+li
+						margin-left: 4rem
+
+@media (min-width: 550px)
+
+	p
+		line-height: 4.5rem
+
+	section#about
+
+		ul.inline-links
+
+			li
+				display: inline-block
+				text-align: left
+				letter-spacing: inherit
+				margin-right: 5rem
+
+	section#process
+
+		#maiden
+			margin-bottom: -10rem
+
+		.process-items
+
+			.process-item
+				padding: 4rem 1rem 4rem
+
+				p
+					padding: 4rem
+
+	section#services
+
+		.service
+			padding: 8rem 4rem
+
+@media (min-width: 800px)
+
+	.row
+		flex-direction: row
+		margin-left: -1.0rem
+		width: calc(100% + 2.0rem)
+
+		.column
+			margin-bottom: inherit
+			padding: 0 1.0rem
+
+			&.column-32-md
+				flex: 0 0 32%
+				max-width: 32%
+
+			&.column-45-md
+				flex: 0 0 45%
+				max-width: 45%
+
+			&.column-47-md
+				flex: 0 0 47%
+				max-width: 47%
+
+			&.column-50-md
+				flex: 0 0 50%
+				max-width: 50%
+
+			&.column-60-md
+				flex: 0 0 60%
+				max-width: 60%
+
+			&.column-80-md
+				flex: 0 0 80%
+				max-width: 80%
+
+			&.column-90-md
+				flex: 0 0 90%
+				max-width: 90%
+
+			&.column-offset-5-md
+				margin-left: 5%
+
+			&.column-offset-10-md
+				margin-left: 10%
+
+	header.navigation
+
+		nav
+
+			#menu-overlay
+
+				.menu-items
+
+					ul.menu-items-social
+						position: absolute
+						bottom: 15rem
+						right: 0
+
+					a.email
+						position: absolute
+						bottom: 11rem
+						right: 0
+
+	section#hero
+		padding: 13rem 0 20rem
+
+	section#process
+		padding: $spacing-top-bottom
+
+	section#services
+
+		.service
+			margin: 0 !important
+
+			h3
+				padding: 4rem 0
+
+			.line-frame
+				max-width: 90%
+
+	section#contact
+
+		.contact-header
+
+			.right
+				display: flex
+
+			.human
+				display: inline-block
+
+	section#links
+
+		.blog-container
+			margin-top: 0
+
+	section#footer
+
+		nav
+			display: flex
+			flex-direction: row
+			text-align: left
+
+			.left ul,
+			.right ul
+				display: initial
+
+				li+li
+					li + li
+					margin-left: initial
+
+			.left
+				margin-bottom: 0
+
+				ul li
+					margin-right: 5rem !important
+
+			.right ul li
+				margin-left: 2.5rem !important
+
+		.copyright
+			text-align: left
+
+@media (min-width: 960px)
+
+	h1
+		font-size: 3.5em
+
+	h2
+		font-size: 3.2em
+
+		a
+			span
+				position: relative
+
+				&:after
+					bottom: 13px
+
+	.row
+
+		.column
+
+			&.column-32-lg
+				flex: 0 0 32%
+				max-width: 32%
+
+			&.column-40-lg
+				flex: 0 0 40%
+				max-width: 40%
+
+			&.column-80-lg
+				flex: 0 0 80%
+				max-width: 80%
+
+			&.column-90-lg
+				flex: 0 0 90%
+				max-width: 90%
+
+			&.column-offset-5-lg
+				margin-left: 5%
+
+			&.column-offset-10-lg
+				margin-left: 10%
+
+	header.navigation
+
+		nav
+
+			.right ul li
+
+				&:nth-child(1),
+				&:nth-child(2)
+					display: inline-block
+
+	section#hero
+
+		#canvas
+			display: block
+
+		.canvas-placeholder
+			display: none
+
+	section#services
+
+			.service
+				padding: 8rem
+
+				.column
+
+					ul
+						padding-top: 8rem

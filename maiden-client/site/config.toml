@@ -1,0 +1,17 @@
+# Dist location
+
+publishDir = "../dist"
+
+# Page settings
+
+baseurl = "http://maiden.agency/"
+title = "Maiden - Creative Agency 2019"
+languageCode = "en-us"
+
+[params]
+
+  # Meta
+  
+  author = "Maiden LLC"
+  description = ""
+  email = "inquiry@maiden.agency"

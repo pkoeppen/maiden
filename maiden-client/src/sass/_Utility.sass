@@ -1,0 +1,30 @@
+
+// Utility
+// ––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.clearfix
+
+	&:after
+		clear: both
+		content: ' ' // The space content is one way to avoid an Opera bug.
+		display: table
+
+.float-left
+	float: left
+
+.float-right
+	float: right
+
+.center-x
+	left: 50%
+	transform: translateX(-50%)
+
+.center-y
+	top: 50%
+	transform: translateY(-50%)
+
+%cover
+	left: 0
+	right: 0
+	top: 0
+	bottom: 0

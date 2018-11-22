@@ -1,0 +1,574 @@
+
+// Sass Modules
+// ––––––––––––––––––––––––––––––––––––––––––––––––––
+
+@import Color
+@import Typography
+@import Base
+@import Blockquote
+@import Button
+@import Code
+@import Divider
+@import Form
+@import Grid
+@import Link
+@import List
+@import Pace
+@import Spacing
+@import Table
+@import Image
+@import Utility
+
+body.menu-open
+	@extend %cover
+	position: fixed
+	overflow-y: scroll
+
+#overlay
+	@extend %cover
+	z-index: 99
+	opacity: 1
+	background-color: $color-background
+	position: fixed
+	transition: all 1s ease
+
+	&.hidden
+		opacity: 0 !important
+		pointer-events: none
+
+#sidecrumb
+	@extend %cover
+	position: fixed
+	pointer-events: none
+	opacity: 1
+	transition: opacity 500ms ease
+
+	&.transparent
+		opacity: 0
+
+	.container
+		height: 100%
+
+		ul
+			position: absolute
+			left: -11rem
+			top: 45%
+			width: 200px
+			transform: rotate(-90deg)
+
+			li
+				color: #999999
+				font-size: .7em
+				text-transform: uppercase
+				letter-spacing: .5rem
+				line-height: 1
+				display: none
+
+				&.active
+					display: block
+
+
+.bm
+	@extend %cover
+	z-index: 100
+	position: absolute
+	padding-top: 4rem
+	pointer-events: none
+
+	a
+		border: none
+		display: inline-block
+		pointer-events: initial
+		
+		#bm-logo
+			height: 80px
+			width: 75px
+
+			path
+				transition: stroke 500ms ease, fill 500ms ease
+
+			&.white path
+				fill: $color-secondary
+				stroke: $color-secondary
+
+header.navigation
+	margin: 2rem 0 0;
+
+	nav
+		display: flex
+		padding: 2rem
+		justify-content: space-between
+		align-items: center
+
+		.left
+			line-height: 0
+
+			#logo
+				height: 80px
+				width: 75px
+
+		.right ul li
+			display: inline-block
+			margin-left: 2rem
+
+			&:nth-child(1),
+			&:nth-child(2)
+				display: none
+
+			button
+				margin: 0 1.7rem 0
+
+			#menu-toggle
+				cursor: pointer
+				overflow: hidden
+				display: inline-block
+				height: 16px
+				width: 24px
+				vertical-align: middle
+
+		#menu-overlay
+			position: fixed
+			z-index: 99
+			left: 0
+			right: 0
+			top: 0
+			bottom: 0
+			background-color: rgba(0,0,0,.93)
+			padding-top: 6rem
+			opacity: 1
+			transition: all 250ms cubic-bezier(0.55, 0.055, 0.675, 0.19)
+
+			&.hidden
+				visibility: hidden
+				opacity: 0
+
+				.menu-items
+					top: 1rem
+					opacity: 0
+
+			.menu-items
+				position: relative
+				top: 0
+				height: 100vh
+				opacity: 1
+				text-align: right
+				transition: all 250ms 250ms ease-out
+
+				a
+					border: none
+					color: $color-tertiary
+
+					&:hover,
+					&:focus
+						color: $color-blood-red
+
+
+				ul.menu-items-large
+					font-size: 1.8em
+
+					li
+						line-height: 6rem
+
+						&.active a
+							color: $color-secondary
+
+				ul.menu-items-small
+
+					li
+
+						.circle
+							display: inline-block
+							background-color: $color-blood-red
+							width: 8px
+							height: 8px
+							border-radius: 50%
+							margin-right: 8px
+
+				ul.menu-items-social
+
+					li
+						display: inline-block
+
+					li+li
+						margin-left: 2rem
+
+				ul.menu-items-social,
+				a.email
+					position: relative
+					bottom: 0
+					right: 0
+
+section#hero
+	text-align: center
+	padding: 13rem 0 17rem
+	position: relative
+
+	#canvas
+		display: none
+		position: absolute
+		left: 0
+		top: -10%
+		width: 100% !important
+		height: 130% !important
+		z-index: -1
+
+	.canvas-placeholder
+		@extend %cover
+		position: absolute
+		display: flex
+		align-items: center
+
+		img
+			width: 100%
+		
+
+	h2 a
+			border: none
+
+section#video
+
+	.video-container
+		border: .5rem solid black
+
+	.load-portfolio
+		margin: 6rem 0 6rem
+
+section#about
+	background-color: $color-secondary
+	padding: $spacing-top-bottom
+
+	ul.inline-links
+		margin: 3rem 0 0
+
+		li
+			display: block
+			text-align: center
+			letter-spacing: .3rem
+			margin: 0
+
+section#process
+	position: relative
+	padding: 6rem 0 13rem
+
+	#petals,
+	#petals-overlay
+		z-index: 1
+		pointer-events: none
+		position: absolute
+		left: 0
+		right: 0
+
+		img
+			display: block
+			margin: 0 auto
+
+	#petals
+		top: -4rem
+
+	#petals-overlay
+		top: 8rem
+
+	#maiden
+		margin-bottom: -9rem
+
+	.process-items
+		justify-content: space-between
+
+		.process-item
+			position: relative
+			top: 200px
+			text-align: center
+			padding: 2rem
+			margin: 1rem 0
+			background-color: $color-secondary
+			box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.25);
+			
+			&[data-process-item="1"]
+				transition: all 1.2s ease
+
+			&[data-process-item="2"]
+				transition: all 1.2s 200ms ease
+
+			&[data-process-item="3"]
+				transition: all 1.2s 400ms ease
+
+			&.animate
+				top: 0
+
+			#alchemy-icon-1, #alchemy-icon-2, #alchemy-icon-3
+				padding: 4rem 0 4rem
+				height: 24rem
+				fill: $color-blood-red
+
+			p
+				text-align: center
+				margin: 0
+				padding: 4rem 0 4rem
+				
+			hr
+				width: 50%
+				margin: 0 auto
+
+	h2
+		margin-top: 13rem
+
+section#services
+	margin-bottom: 13rem
+
+	.service + .service
+		margin-top: 2rem
+
+	.service
+		background-color: $color-primary
+		background-image: url("../images/binding_dark.png")
+		color: $color-secondary
+		padding: 6rem 2rem
+
+		.column
+			margin: 0
+
+			ul
+				padding-top: 4rem
+				text-align: center
+
+				i
+					color: $color-blood-red
+					margin-right: 1rem
+
+		h3
+			letter-spacing: .2rem
+			padding: 2rem 0
+			text-align: center
+
+		.line-frame
+			margin: 0 auto
+			max-width: 60%
+
+			&.flip
+				transform: rotate(180deg)
+
+			svg path
+				stroke: $color-secondary
+				stroke-dasharray: 500
+				stroke-dashoffset: -500
+				transition: all 4s ease
+
+			&.animate svg path
+				stroke-dashoffset: 0
+
+section#rules
+	padding: $spacing-top-bottom
+	background-color: $color-secondary
+
+	ul.rule-items
+		margin: 6rem 0 0
+
+		li.rule-item
+			position: relative
+			display: block
+			padding-left: 6rem
+			
+			span
+				color: $color-tertiary
+				position: absolute
+				left: 0
+
+section#contact
+	padding: $spacing-top-bottom
+
+	.contact-header
+		display: flex
+		justify-content: space-between
+		align-items: center
+
+		.left,
+		.right
+			display: flex
+
+		.human
+			border: 5px solid $color-background
+			border-radius: 50%
+			overflow: hidden
+			width: 8rem
+			height: 8rem
+			display: none
+			margin-left: -2rem
+
+			img
+				width: 100%
+
+			.popup
+				opacity: 0
+				color: $color-secondary
+				position: absolute
+				top: -60px
+				background-color: $color-primary
+				border-radius: .3rem
+				padding: .95rem 1rem .75rem
+				font-size: .75em
+				line-height: 1.7rem
+				transition: all .1s ease-out
+
+				.arrow
+					background-color: $color-primary
+					height: 10px
+					width: 10px
+					position: absolute
+					bottom: -3px
+					left: 2rem
+					transform: rotate(45deg)
+
+			&:hover
+
+				.popup
+					top: -66px
+					opacity: 1
+
+	p.contact-description
+		margin: 1rem 0 4rem
+
+	button.submit-button
+		margin: 3rem 0 0
+
+	input
+		margin-bottom: 3rem
+
+section#links
+	padding: $spacing-top-bottom
+	color: $color-tertiary
+	background-color: $color-primary
+
+	.header
+		margin-bottom: 4rem
+		text-transform: uppercase
+		letter-spacing: .2em
+		line-height: 1
+
+	.office-container
+
+		.column + .column
+			margin-top: 2rem
+
+		.office
+			display: flex
+
+			.icon
+				width: 60px
+				flex-grow: 1
+				text-align: right
+
+				svg
+					width: 46px
+					margin-right: 2rem
+
+			.office-details
+				flex-grow: 1
+				padding-top: 1.2rem
+				line-height: 3rem
+				width: 192px
+
+				a
+					color: $color-tertiary
+					border-bottom: 1px solid $color-tertiary
+
+					&:hover,
+					&:focus
+						border-color: $color-blood-red
+
+				.location-big
+					color: $color-secondary
+
+				.location-small
+
+
+				.address
+					margin: 1.5rem 0
+
+				.number
+
+	.blog-container
+		overflow: hidden
+		height: 250px
+		margin-top: 8rem
+
+		.row.blog
+			height: 100%
+			display: block
+			margin: 0
+			width: 100%
+			overflow: hidden
+
+
+			.blog-shaded
+				position: relative
+				width: 200%
+				height: 100%
+				background: repeating-linear-gradient(-45deg, $color-primary, $color-primary 10px, $color-tertiary 10px, $color-tertiary 11px)
+				animation: none
+				transition: linear
+
+				&.animate
+					animation: shaded 30s infinite linear
+
+section#footer
+	padding: 5rem 0
+
+	nav
+		display: initial
+		justify-content: space-between
+		align-items: center
+		flex-direction: column
+
+		a
+			border: none
+
+			&:hover,
+			&:focus
+				color: $color-blood-red
+
+		.left,
+		.right
+			text-align: center
+
+			ul
+
+				li+li
+					margin-left: 2rem
+
+		.left
+			margin-bottom: 1rem
+
+			ul li
+				display: inline-block
+
+				.circle
+					display: inline-block
+					background-color: $color-blood-red
+					width: 8px
+					height: 8px
+					border-radius: 50%
+					margin-right: 8px
+
+		.right ul li
+			font-size: 1.75em
+			display: inline-block
+			margin-left: 2.5rem
+
+	hr
+		margin: 2.5rem auto
+
+	.copyright
+		font-size: .85em
+		text-align: center
+
+@import Mobile
+
+@keyframes line-frame
+	to
+		stroke-dashoffset: 0
+
+@keyframes shaded
+	0%
+		left: -100%
+	100%
+		left: 0
